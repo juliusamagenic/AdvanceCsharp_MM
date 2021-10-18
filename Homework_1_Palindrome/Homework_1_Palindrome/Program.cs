@@ -11,7 +11,7 @@ namespace Homework_1_Palindrome
     {
         static void Main(string[] args)
         {
-            int entryCount = 2;
+            int entryCount = 10;
             Console.WriteLine($"Enter {entryCount} words/phrases and it will output a list of entries that are Palindrome:");
             var palindromeCandidates = new List<string>();
             for (int i = 0; i < entryCount; ++i)
