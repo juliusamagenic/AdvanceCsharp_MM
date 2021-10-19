@@ -31,11 +31,12 @@ namespace Homework_1_Palindrome
 
         static IEnumerable<string> GetPalindromeEntries(List<string> entries)
         {
-            foreach(var entry in entries)
+            var replaceRegex = new Regex(@"\s+|'|,");
+            foreach (var entry in entries)
             {
-                var trimmedEntry = entry.Replace(" ", "");
+                var trimmedEntry = replaceRegex.Replace(entry, "");
                 var reversed = new string(trimmedEntry.Reverse().ToArray());
-                if (trimmedEntry.Equals(reversed))
+                if (trimmedEntry.Equals(reversed, StringComparison.OrdinalIgnoreCase))
                     yield return entry;
             }
         }
